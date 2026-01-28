@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Header from "@/components/ui/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,16 +22,20 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* Header */}
+          <Header />
 
           <main className="relative min-h-screen container mx-auto pt-40 md:pt-32 sm:pt-24 px-4">
             {/* glow */}
             <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-              <div className="absolute top-0 left-1/4 w-96 bg-pink-600/20 rounded-full" />
-              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl" />
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/20 rounded-full blur-3xl" />
             </div>
-            <div className="relative z-10">{children}</div>
+            <div className="relative z-10 min-h-[70vh]">{children}</div>
 
             {/* Footer */}
+            <footer className="border-t border-gray-800/50 py-8 px-6 max-w-7xl mx-auto">
+              <div className="text-sm text-gray-400">tani</div>
+            </footer>
           </main>
         </ThemeProvider>
       </body>
